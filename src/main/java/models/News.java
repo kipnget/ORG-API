@@ -81,5 +81,21 @@ public class News {
         this.type = type;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof News)) return false;
+        News news = (News) o;
+        return id == news.id &&
+                department_id == news.department_id &&
+                Objects.equals(title, news.title) &&
+                Objects.equals(content, news.content) &&
+                Objects.equals(writtenBy, news.writtenBy) &&
+                Objects.equals(type, news.type);
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(title, content, writtenBy, id, department_id, type);
+    }
 }
