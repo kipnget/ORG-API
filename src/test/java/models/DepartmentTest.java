@@ -31,5 +31,26 @@ public class DepartmentTest {
         Department department =setupDepartment();
         assertEquals("ict support", department.getDescription());
     }
+    @Test
+    public void getTotal_employees() {
+        Department department =setupDepartment();
+        assertEquals(15, department.getTotal_employees());
+    }
+    @Test
+    public void setName() {
+        Department department =setupDepartment();
+        department.setName("ICT");
+        assertNotEquals("accounts", department.getName());
+    }
 
+    @Test
+    public void setId() {
+        Department department =setupDepartment();
+        department.setId(5);
+        assertEquals(5, department.getId());
+    }
+    //helper method
+    public Department setupDepartment(){
+        return new Department("ICT", "ict support", 15);
+    }
 }
