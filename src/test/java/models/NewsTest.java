@@ -31,5 +31,45 @@ public class NewsTest {
         assertEquals("Great service", testNews.getContent());
     }
 
+    @Test
+    public void setContent() {
+        News testNews = setupNews();
+        testNews.setContent("No free dessert :(");
+        assertNotEquals("Great service", testNews.getContent());
+    }
+    @Test
+    public void getWrittenBy(){
+        News testNews = setupNews();
+        assertEquals("Kim",testNews.getWrittenBy());
+    }
+    @Test
+    public void setWrittenBy(){
+        News testNews= setupNews();
+        testNews.setWrittenBy("Kim");
+        assertEquals("Kim",testNews.getWrittenBy());
+    }
+    @Test
+    public void getDepartmentId() {
+        News testNews = setupNews();
+        assertEquals(1, testNews.getDepartment_id());
+    }
 
+    @Test
+    public void setDepartmentId() {
+        News testNews = setupNews();
+        testNews.setDepartment_id(10);
+        assertNotEquals(1, testNews.getDepartment_id());
+    }
+
+    @Test
+    public void setId() {
+        News testNews = setupNews();
+        testNews.setId(5);
+        assertEquals(5, testNews.getId());
+    }
+
+    // helper
+    public News setupNews (){
+        return new News("organise", "Great service","Kim",1);
+    }
 }
