@@ -28,3 +28,21 @@ public class EmployeeTest {
         assertEquals("ict manager",employee.getPosition());
     }
 
+    @Test
+    public void getRole() {
+        Employee employee=setEmployee();
+        assertEquals("In charge of the ict department",employee.getRole());
+    }
+
+
+    @Test
+    public void getDepartment_id() {
+        Employee employee=setEmployee();
+        assertEquals(1,employee.getDepartment_id());
+    }
+
+    //helper
+    public  Employee setEmployee(){
+        return new Employee("nehemiah","ict manager","In charge of the ict department",1);
+    }
+}
