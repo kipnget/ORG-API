@@ -82,14 +82,14 @@ public class Sql2oNewsDaoTest {
 
     //helper
     public News setUpNews(){
-        News news =new News("Review","The employees in this department are friendly","Daisy",2);
+        News news =new News("Review","The employees in this department are friendly","mutai",2);
 
         newsDao.add(news);
 
         return news;
     }
     public News setUpOrgNews(){
-        News organizationNews = new News("Review","Very good services","Daisy");
+        News organizationNews = new News("Review","Very good services","mutai");
         newsDao.add(organizationNews);
         return organizationNews;
     }
