@@ -52,3 +52,4 @@ settings.gradle
 .idea/
 
 git.sh
+!gradle-wrapper.jar
