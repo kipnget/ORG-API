@@ -33,14 +33,14 @@ public class App {
         Connection conn;
         Gson gson= new Gson();
 
-        String connectionString = "jdbc:postgresql://localhost:5432/organapi";
-        Sql2o sql2o = new Sql2o(connectionString, "nehemiah", "123");
+//        String connectionString = "jdbc:postgresql://localhost:5432/organapi";
+//        Sql2o sql2o = new Sql2o(connectionString, "nehemiah", "123");
 
-        departmentDao = new Sql2oDepartmentDao(sql2o);
-        employeeDao = new Sql2oEmployeeDao(sql2o);
-        newsDao = new Sql2oNewsDao(sql2o);
+        departmentDao = new Sql2oDepartmentDao(DB.sql2o);
+        employeeDao = new Sql2oEmployeeDao(DB.sql2o);
+        newsDao = new Sql2oNewsDao(DB.sql2o);
         final String cannotBeEmptyMsg = "An error occured",cannotBeEmpty;
-        conn = sql2o.open();
+//        conn = sql2o.open();
         staticFileLocation("/public");
 
         get("/",((request, response) -> "Welcome to organisational api"));
